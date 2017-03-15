@@ -1,0 +1,78 @@
+Zadanie 1)
+
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:tsiss="http://semantic.cs.put.poznan.pl/dokuwiki/#">
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#SOS1">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Sos_pomidorowy"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Kotlin"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#litr"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#200"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#S2">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Sos_pomidorowy"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Kotlin"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#litr"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#100"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#SOS3">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Sos_pomidorowy"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Kotlin"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#litr"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#50"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#MAK2">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Maka"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Lublin"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#kg"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#250"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#MK6">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Maka"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Lublin"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#kg"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#500"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#DR3">
+    <rdf:type  rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Drozdze"/>
+	<rdf:lokalizacja rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Poznan"/>
+	<rdf:jednostka rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#kg"/>
+	<rdf:stanMagazonowy rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#10"/>
+</rdf:Description>
+</rdf:RDF>
+
+Zadanie 2)
+
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tsiss="http://semantic.cs.put.poznan.pl/dokuwiki/#">
+	<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#Produkt">
+		<dc:creator>
+			<rdf:Description>
+				<tsiss:malokalizacje rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Kotlin" />
+				<tsiss:jest rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Sos_pomidorowy" />
+			</rdf:Description>
+		</dc:creator>
+	</rdf:Description>
+</rdf:RDF>
+  
+
+
+Zadanie 3)
+
+<?xml version="1.0"?>
+<rdf:RDF xmlns:tsiss="http://semantic.cs.put.poznan.pl/dokuwiki/#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<rdf:Description rdf:about="http://semantic.cs.put.poznan.pl/dokuwiki/#Zdrowie">
+		<tsiss:twierdzi>
+			<rdf:Statement>
+				<rdf:subject rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Mąka_orkiszowa" />
+				<rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#jestZdrowsza" />
+				<rdf:object rdf:resource="http://semantic.cs.put.poznan.pl/dokuwiki/#Mąka_pszenna" />
+			</rdf:Statement>
+		</tsiss:twierdzi>
+	</rdf:Description>
+</rdf:RDF>
