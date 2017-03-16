@@ -1,0 +1,351 @@
+@prefix : <https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://semantic.cs.put.poznan.pl/ontologie/pizza.owl> a owl:Ontology ;
+	rdfs:comment "Ontologia opisująca różne rodzaje pizzy." .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#maCiasto
+
+:maCiasto a owl:ObjectProperty ;
+	rdfs:subPropertyOf :maCzęść ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :Pizza ;
+	rdfs:range :Ciasto .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#maCzęść
+
+:maCzęść a owl:ObjectProperty , owl:TransitiveProperty .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#maDodatek
+
+:maDodatek a owl:ObjectProperty ;
+	rdfs:subPropertyOf :maCzęść ;
+	rdfs:domain :Pizza ;
+	rdfs:range :Dodatek .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Cebula
+
+:Cebula a owl:Class ;
+	rdfs:subClassOf :DodatekWarzywny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Ciasto
+
+:Ciasto a owl:Class .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#CiastoCienkie
+
+:CiastoCienkie a owl:Class ;
+	rdfs:subClassOf :Ciasto ;
+	owl:disjointWith :CiastoGrube .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#CiastoGrube
+
+:CiastoGrube a owl:Class ;
+	rdfs:subClassOf :Ciasto .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Dodatek
+
+:Dodatek a owl:Class .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#DodatekMięsny
+
+:DodatekMięsny a owl:Class ;
+	rdfs:subClassOf :Dodatek .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#DodatekSerowy
+
+:DodatekSerowy a owl:Class ;
+	rdfs:subClassOf :Dodatek .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#DodatekWarzywny
+
+:DodatekWarzywny a owl:Class ;
+	rdfs:subClassOf :Dodatek .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#KiełbasaPepperoni
+
+:KiełbasaPepperoni a owl:Class ;
+	rdfs:subClassOf :DodatekMięsny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Margherita
+
+:Margherita a owl:Class ;
+	rdfs:subClassOf :NazwanaPizza , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :Mozzarella .
+
+:Margherita rdfs:subClassOf _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :SosPomidorowy .
+
+:Margherita rdfs:comment "Pizza, która ma dodatki: sos pomidorowy i mozzarella." .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Mozzarella
+
+:Mozzarella a owl:Class ;
+	rdfs:subClassOf :DodatekSerowy ;
+	owl:disjointWith :Parmesan .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#NazwanaPizza
+
+:NazwanaPizza a owl:Class ;
+	rdfs:subClassOf :Pizza .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Papryka
+
+:Papryka a owl:Class ;
+	rdfs:subClassOf :DodatekWarzywny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#PaprykaChilli
+
+:PaprykaChilli a owl:Class ;
+	rdfs:subClassOf :Papryka ;
+	owl:disjointWith :PaprykaJalopeno .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#PaprykaJalopeno
+
+:PaprykaJalopeno a owl:Class ;
+	rdfs:subClassOf :Papryka .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Parmesan
+
+:Parmesan a owl:Class ;
+	rdfs:subClassOf :DodatekSerowy .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Pepperoni
+
+:Pepperoni a owl:Class ;
+	rdfs:subClassOf :NazwanaPizza , _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :KiełbasaPepperoni .
+
+:Pepperoni rdfs:subClassOf _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :Mozzarella .
+
+:Pepperoni rdfs:subClassOf _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :SosPomidorowy .
+
+:Pepperoni rdfs:comment "Pizza, która ma dodatki: sos pomidorowy i mozzarella." .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#PikantnySosPomidorowy
+
+:PikantnySosPomidorowy a owl:Class ;
+	rdfs:subClassOf :SosPomidorowy .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Pizza
+
+:Pizza a owl:Class ;
+	rdfs:subClassOf _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty :maCiasto ;
+	owl:someValuesFrom :Ciasto .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#PizzaWegetariańska
+
+:PizzaWegetariańska a owl:Class ;
+	owl:equivalentClass _:genid7 .
+
+_:genid7 owl:intersectionOf _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first :Pizza ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first _:genid9 .
+
+_:genid9 a owl:Class ;
+	owl:complementOf _:genid10 .
+
+_:genid10 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :DodatekMięsny .
+
+_:genid8 rdf:rest rdf:nil .
+
+_:genid7 a owl:Class .
+
+:PizzaWegetariańska rdfs:subClassOf :Pizza .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#PizzaZMięsem
+
+:PizzaZMięsem a owl:Class ;
+	owl:equivalentClass _:genid12 .
+
+_:genid12 owl:intersectionOf _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first :Pizza ;
+	rdf:rest _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first _:genid14 .
+
+_:genid14 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :DodatekMięsny .
+
+_:genid13 rdf:rest rdf:nil .
+
+_:genid12 a owl:Class .
+
+:PizzaZMięsem rdfs:subClassOf :Pizza .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Pomidor
+
+:Pomidor a owl:Class ;
+	rdfs:subClassOf :DodatekWarzywny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Salami
+
+:Salami a owl:Class ;
+	rdfs:subClassOf :DodatekMięsny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Sos
+
+:Sos a owl:Class ;
+	rdfs:subClassOf :Dodatek .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#SosPomidorowy
+
+:SosPomidorowy a owl:Class ;
+	rdfs:subClassOf :Sos .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Szynka
+
+:Szynka a owl:Class ;
+	rdfs:subClassOf :DodatekMięsny .
+# 
+# https://semantic.cs.put.poznan.pl/ontologie/pizza.owl#Vesuvio
+
+:Vesuvio a owl:Class ;
+	rdfs:subClassOf :PizzaWegetariańska , _:genid16 .
+
+_:genid16 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :Mozzarella .
+
+:Vesuvio rdfs:subClassOf _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :SosPomidorowy .
+
+:Vesuvio rdfs:subClassOf _:genid18 .
+
+_:genid18 a owl:Restriction ;
+	owl:onProperty :maDodatek ;
+	owl:someValuesFrom :Szynka .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid19 a owl:AllDisjointClasses ;
+	owl:members _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first :Cebula ;
+	rdf:rest _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first :Papryka ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :Pomidor ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid23 a owl:AllDisjointClasses ;
+	owl:members _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first :Ciasto ;
+	rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first :Dodatek ;
+	rdf:rest _:genid24 .
+
+_:genid24 a rdf:List ;
+	rdf:first :Pizza ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid27 a owl:AllDisjointClasses ;
+	owl:members _:genid31 .
+
+_:genid31 a rdf:List ;
+	rdf:first :DodatekMięsny ;
+	rdf:rest _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first :DodatekSerowy ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first :DodatekWarzywny ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first :Sos ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid32 a owl:AllDisjointClasses ;
+	owl:members _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first :KiełbasaPepperoni ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :Salami ;
+	rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first :Szynka ;
+	rdf:rest rdf:nil .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
